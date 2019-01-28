@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export default styled.div`
   position: absolute;
@@ -103,4 +103,4 @@ export default styled.div`
     left: 50%;
     margin-left: -3px;
   }
-`
+`;
