@@ -28,7 +28,8 @@ export default class Rect extends PureComponent {
     onDragStart: PropTypes.func,
     onDrag: PropTypes.func,
     onDragEnd: PropTypes.func,
-    parentRotateAngle: PropTypes.number
+    parentRotateAngle: PropTypes.number,
+    theme: PropTypes.object
   }
 
   setElementRef = (ref) => { this.$element = ref }
@@ -140,7 +141,8 @@ export default class Rect extends PureComponent {
       },
       zoomable,
       rotatable,
-      parentRotateAngle
+      parentRotateAngle,
+      theme
     } = this.props
     const style = {
       width: Math.abs(width),
