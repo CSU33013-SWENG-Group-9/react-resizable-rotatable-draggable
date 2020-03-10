@@ -16,9 +16,11 @@ const zoomableMap = {
 
 export default class Rect extends PureComponent {
   static propTypes = {
-    styles: PropTypes.object,
-    zoomable: PropTypes.string,
-    rotatable: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ]),
     onResizeStart: PropTypes.func,
     onResize: PropTypes.func,
     onResizeEnd: PropTypes.func,
@@ -29,7 +31,13 @@ export default class Rect extends PureComponent {
     onDrag: PropTypes.func,
     onDragEnd: PropTypes.func,
     parentRotateAngle: PropTypes.number,
-    theme: PropTypes.object
+    rotatable: PropTypes.bool,
+    styles: PropTypes.object,
+    zoomable: PropTypes.string
+  }
+
+  static defaultProps = {
+    className: ''
   }
 
   setElementRef = (ref) => { this.$element = ref }
@@ -134,6 +142,8 @@ export default class Rect extends PureComponent {
 
   render () {
     const {
+      children,
+      className,
       styles: {
         position: { centerX, centerY },
         size: { width, height },
@@ -141,8 +151,7 @@ export default class Rect extends PureComponent {
       },
       zoomable,
       rotatable,
-      parentRotateAngle,
-      theme
+      parentRotateAngle
     } = this.props
     const style = {
       width: Math.abs(width),
@@ -157,7 +166,7 @@ export default class Rect extends PureComponent {
       <StyledRect
         ref={this.setElementRef}
         onMouseDown={this.startDrag}
-        className="rect single-resizer"
+        className={`rect single-resizer ${className}`}
         style={style}
       >
         {
@@ -189,6 +198,7 @@ export default class Rect extends PureComponent {
             )
           })
         }
+        {children}
       </StyledRect>
     )
   }
