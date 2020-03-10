@@ -59,8 +59,7 @@ class App extends PureComponent {
       onResize: this.handleResize,
       // onResizeEnd: this.handleUp,
       // onDragStart: this.handleDragStart,
-      onDrag: this.handleDrag,
-      theme: {... {border: "2px solif #1cb864"}}
+      onDrag: this.handleDrag
       // onDragEnd: this.handleDragEnd,
     }} />
   }
