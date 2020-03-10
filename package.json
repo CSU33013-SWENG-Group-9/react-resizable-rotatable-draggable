@@ -19,7 +19,7 @@
     "npm": ">=6"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm install && rollup -c",
     "build-dev": "rollup -c -w",
     "build-example": "cd example && npm install && npm run build",
     "publish-dev": "npm publish --tag dev",
