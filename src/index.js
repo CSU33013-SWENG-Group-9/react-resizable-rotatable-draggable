@@ -11,6 +11,7 @@ export default class ResizableRect extends Component {
       PropTypes.node
     ]),
     left: PropTypes.number.isRequired,
+    theme: PropTypes.object,
     top: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
@@ -95,6 +96,7 @@ export default class ResizableRect extends Component {
       <Rect
         children={children}
         className={className}
+        theme={theme}
         styles={styles}
         zoomable={zoomable}
         rotatable={Boolean(rotatable && onRotate)}
