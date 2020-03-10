@@ -7,7 +7,6 @@ export default class ResizableRect extends Component {
   static propTypes = {
     className: PropTypes.string,
     left: PropTypes.number.isRequired,
-    theme: PropTypes.object,
     top: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
@@ -91,7 +90,6 @@ export default class ResizableRect extends Component {
     return (
       <Rect
         className={className}
-        theme={theme}
         styles={styles}
         zoomable={zoomable}
         rotatable={Boolean(rotatable && onRotate)}
