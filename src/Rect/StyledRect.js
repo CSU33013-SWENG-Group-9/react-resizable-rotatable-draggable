@@ -2,14 +2,14 @@ import styled from 'styled-components'
 
 export default styled.div`
   position: absolute;
-  border: ${props.theme.border}
+  border: ${props => props.theme.border}
 
   .square {
     position: absolute;
     width: 7px;
     height: 7px;
     background: white;
-    border: ${props.theme.border}
+    border: ${props => props.theme.border}
     border-radius: 1px;
   }
 
