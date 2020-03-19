@@ -107,7 +107,7 @@ export default class ResizableRect extends Component {
         onDrag={this.handleDrag}
         onDragEnd={onDragEnd}
       >
-        {props.children}
+        {this.props.children}
       </Rect>
     )
   }
