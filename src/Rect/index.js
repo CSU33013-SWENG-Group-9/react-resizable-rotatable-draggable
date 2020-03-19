@@ -193,6 +193,10 @@ export default class Rect extends PureComponent {
             )
           })
         }
+
+        {
+          this.props.children
+        }
       </StyledRect>
     )
   }
